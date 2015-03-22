@@ -39,6 +39,8 @@ describe('CountryQuery', function(){
       expect(CountryQuery.find('name.common', 'Aruba')).to.have.property('cca3', 'ABW')
       expect(CountryQuery.find('name.official', 'Aruba')).to.have.property('cca3', 'ABW')
       expect(CountryQuery.find('name.native', 'Aruba')).to.have.property('cca3', 'ABW')
+      expect(CountryQuery.find('translations', 'Aruba')).to.have.property('cca3', 'ABW')
+      expect(CountryQuery.find('translations', 'Australie')).to.have.property('cca3', 'AUS')
     })
     
     it('should return an object when finding by uniquely identifiable properties that contain maps', function() {

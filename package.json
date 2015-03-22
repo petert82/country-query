@@ -1,0 +1,30 @@
+{
+  "name": "countries",
+  "version": "0.0.1",
+  "description": "A queryable interface to world-countries data",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "lodash": "^3.5.0",
+    "lodash-deep": "^1.6.0",
+    "world-countries": "^1.7.0"
+  },
+  "devDependencies": {
+    "chai": "^2.1.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "country",
+    "countries",
+    "currencies",
+    "iso",
+    "languages",
+    "regions"
+  ],
+  "author": "Peter Thompson <peter.thompson@dunelm.org.uk> (http://www.petethompson.net)",
+  "license": "MIT"
+}

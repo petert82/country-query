@@ -1,6 +1,6 @@
 # country-query
 
-A queryable interface to [world-countries][world-countries] data.
+A javascript query API for [world-countries][world-countries] data.
 
 ## Table of contents
 

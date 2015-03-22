@@ -1,7 +1,14 @@
 {
-  "name": "countries",
-  "version": "0.0.1",
-  "description": "A queryable interface to world-countries data",
+  "name": "country-query",
+  "version": "0.1.0",
+  "description": "A javascript query API for world-countries data",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/petert82/country-query.git"
+  },
+  "bugs": {
+    "url": "https://github.com/petert82/country-query/issues"
+  },
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -25,6 +32,10 @@
     "languages",
     "regions"
   ],
-  "author": "Peter Thompson <peter.thompson@dunelm.org.uk> (http://www.petethompson.net)",
+  "author": {
+    "name": "Peter Thompson",
+    "email": "peter.thompson@dunelm.org.uk",
+    "url": "http://www.petethompson.net"
+  },
   "license": "ISC"
 }

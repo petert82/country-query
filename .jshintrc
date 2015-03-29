@@ -4,5 +4,6 @@
     "eqeqeq": true,
     "eqnull": true,
     "esnext": true,
+    "laxcomma": true,
     "unused": true
 }

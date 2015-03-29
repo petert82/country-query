@@ -58,17 +58,74 @@ describe('CountryQuery', function() {
     })
     
     it('should return null for searches that return nothing', function() {
-      expect(CountryQuery.find('cca2', 'XX')).to.be.null
-      expect(CountryQuery.find('ccn3', '000')).to.be.null
-      expect(CountryQuery.find('cca3', 'XXX')).to.be.null
-      expect(CountryQuery.find('capital', 'XXXXX')).to.be.null
-      expect(CountryQuery.find('demonym', 'XXXXXXX')).to.be.null
+      var nullTests = 
+        [ {field: 'cca2', value: 'XX'}
+        , {field: 'ccn3', value: '000'}
+        , {field: 'cca3', value: 'XXX'}
+        , {field: 'capital', value: 'XXXXX'}
+        , {field: 'demonym', value: 'XXXXXXX'}
+      ]
+      nullTests.forEach(function(test) {
+        expect(CountryQuery.find(test.field, test.value)).to.be.null
+      })
     })
     
     it('should return null for non-existent properties', function() {
-      expect(CountryQuery.find('cant-find-me', 'XX')).to.be.null
-      expect(CountryQuery.find('', 'XX')).to.be.null
-      expect(CountryQuery.find(null, 'XX')).to.be.null
+      var nullTests = 
+        [ {field: 'cant-find-me', value: 'XX'}
+        , {field: '',             value: 'XX'}
+        , {field: null,           value: 'XX'}
+        ]
+      
+      nullTests.forEach(function(test) {
+        expect(CountryQuery.find(test.field, test.value)).to.be.null
+      })
+    })
+  })
+
+  describe('#findByX()', function() {
+    it('should behave the same as the equivalent plain find', function() {
+      var findSingleTests = 
+        [ {field: 'altSpellings',  value: 'Oesterreich'              , findFunc: 'findByAltSpelling',  expectCca3: 'AUT'}
+        , {field: 'area',          value: 6                          , findFunc: 'findByArea',         expectCca3: 'GIB'}
+        , {field: 'callingCode',   value: '355'                      , findFunc: 'findByCallingCode',  expectCca3: 'ALB'}
+        , {field: 'capital',       value: 'Guatemala City'           , findFunc: 'findByCapital',      expectCca3: 'GTM'}
+        , {field: 'cca2',          value: 'PL'                       , findFunc: 'findByCca2',         expectCca3: 'POL'}
+        , {field: 'cca3',          value: 'GNQ'                      , findFunc: 'findByCca3',         expectCca3: 'GNQ'}
+        , {field: 'ccn3',          value: '056'                      , findFunc: 'findByCcn3',         expectCca3: 'BEL'}
+        , {field: 'demonym',       value: 'Qatari'                   , findFunc: 'findByDemonym',      expectCca3: 'QAT'}
+        , {field: 'languages',     value: 'Azerbaijani'              , findFunc: 'findByLanguage',     expectCca3: 'AZE'}
+        , {field: 'name.common',   value: 'Argentina'                , findFunc: 'findByNameCommon',   expectCca3: 'ARG'}
+        , {field: 'name.official', value: 'Argentine Republic'       , findFunc: 'findByNameOfficial', expectCca3: 'ARG'}
+        , {field: 'name.native',   value: "Rep\u00fablica Argentina" , findFunc: 'findByNameNative',   expectCca3: 'ARG'}
+        , {field: 'tld',           value: '.ao'                      , findFunc: 'findByTld',          expectCca3: 'AGO'}
+        , {field: 'translations',  value: 'Prinsdom Andorra'         , findFunc: 'findByTranslation',  expectCca3: 'AND'}
+        ]
+      
+      findSingleTests.forEach(function(test) {
+        var findByXResult = CountryQuery[test.findFunc].call(CountryQuery, test.value)
+          , findResult = CountryQuery.find(test.field, test.value)
+        
+        expect(findByXResult).to.deep.equal(findResult)
+        expect(findByXResult).to.have.property('cca3', test.expectCca3)
+      })
+      
+      var findArrayTests = 
+        [ {field: 'borders',    value: 'AFG'            , findFunc: 'findByBorders', expectLength: 7}
+        , {field: 'currency',   value: 'GBP'            , findFunc: 'findByCurrency', expectLength: 5}
+        , {field: 'landlocked', value: true             , findFunc: 'findByLandlocked', expectLength: 45}
+        , {field: 'region',     value: 'Africa'         , findFunc: 'findByRegion', expectLength: 59}
+        , {field: 'relevance',  value: '0.5'            , findFunc: 'findByRelevance', expectLength: 36}
+        , {field: 'subregion',  value: 'Western Africa' , findFunc: 'findBySubregion', expectLength: 17}
+        ]
+        
+      findArrayTests.forEach(function(test) {
+        var findByXResult = CountryQuery[test.findFunc].call(CountryQuery, test.value)
+          , findResult = CountryQuery.find(test.field, test.value)
+          
+        expect(findByXResult).to.deep.equal(findResult)
+        expect(findByXResult).to.have.length(test.expectLength)
+      })
     })
   })
 })

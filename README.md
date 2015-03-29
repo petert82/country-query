@@ -92,6 +92,126 @@ Acceptable values for `by` are:
 - `landlocked`
 - `area`
 
+### findByArea(area)
+
+Find country by its area.
+
+Return value is the same as [find](#findby-value).
+
+### findByAltSpelling(altSpelling)
+
+Find country by alternative spellings of its name.
+
+Return value is the same as [find](#findby-value).
+
+### findByBorders(borders)
+
+Find country by countries that it borders
+
+Return value is the same as [find](#findby-value).
+
+### findByCallingCode(callingCode)
+
+Find country by telephone calling code.
+
+Return value is the same as [find](#findby-value).
+
+### findByCapital(capital)
+
+Find country by its capital city.
+
+Return value is the same as [find](#findby-value).
+
+### findByCca2(cca2)
+
+Find country by 2-letter country code.
+
+Return value is the same as [find](#findby-value).
+
+### findByCca3(cca3)
+
+Find country by 3-letter country code.
+
+Return value is the same as [find](#findby-value).
+
+### findByCcn3(ccn3)
+
+Find country by numeric country code.
+
+Return value is the same as [find](#findby-value).
+
+### findByCurrency(currency)
+
+Find country by currency.
+
+Return value is the same as [find](#findby-value).
+
+### findByDemonym(demonym)
+
+Find country by the demonym used for its citizens.
+
+Return value is the same as [find](#findby-value).
+
+### findByLandlocked(landlocked)
+
+Find country by whether or not it is landlocked.
+
+Return value is the same as [find](#findby-value).
+
+### findByLanguage(language)
+
+Find country by its language.
+
+Return value is the same as [find](#findby-value).
+
+### findByNameCommon(name)
+
+Find country by its common name.
+
+Return value is the same as [find](#findby-value).
+
+### findByNameNative(name)
+
+Find country by its native name.
+
+Return value is the same as [find](#findby-value).
+
+### findByNameOfficial(name)
+
+Find country by its official name.
+
+Return value is the same as [find](#findby-value).
+
+### findByRegion(region)
+
+Find country by the region it is located in.
+
+Return value is the same as [find](#findby-value).
+
+### findByRelevance(relevance)
+
+Find country by 'relevance'.
+
+Return value is the same as [find](#findby-value).
+
+### findBySubregion(subregion)
+
+Find country by subregion it is located in.
+
+Return value is the same as [find](#findby-value).
+
+### findByTld(tld)
+
+Find country by top level domain.
+
+Return value is the same as [find](#findby-value).
+
+### findByTranslation(translation)
+
+Find country by translations of its name.
+
+Return value is the same as [find](#findby-value).
+
 ## Thanks
 
 This project would not exist without the work of the contributors to the [world-countries][world-countries] data set.

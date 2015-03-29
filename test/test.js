@@ -1,8 +1,8 @@
 var expect = require('chai').expect
 var CountryQuery = require('../lib/country-query.js')
 
-describe('CountryQuery', function(){
-  describe('#find()', function(){
+describe('CountryQuery', function() {
+  describe('#find()', function() {
     it('should return an object when finding by uniquely identifiable string properties', function(){
       expect(CountryQuery.find('cca2', 'AW')).to.have.property('cca3', 'ABW')
       expect(CountryQuery.find('ccn3', '533')).to.have.property('cca3', 'ABW')
@@ -49,7 +49,7 @@ describe('CountryQuery', function(){
     })
     
     it('should return an array when finding by non-uniquely identifiable properties that contain maps', function() {
-      var austBavCountries= CountryQuery.find('languages', 'Austro-Bavarian German'),
+      var austBavCountries = CountryQuery.find('languages', 'Austro-Bavarian German'),
           austria = CountryQuery.find('cca2', 'AT'),
           italy = CountryQuery.find('cca2', 'IT')
       

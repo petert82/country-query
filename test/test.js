@@ -10,6 +10,7 @@ describe('CountryQuery', function() {
       expect(CountryQuery.find('capital', 'Oranjestad')).to.have.property('cca3', 'ABW')
       expect(CountryQuery.find('demonym', 'Aruban')).to.have.property('cca3', 'ABW')
       expect(CountryQuery.find('cca2', 'AT')).to.have.property('cca3', 'AUT')
+      expect(CountryQuery.find('cioc', 'RUS')).to.have.property('cca3', 'RUS')
     })
     
     it('should return an array when finding by non-uniquely identifiable string properties', function() {
@@ -93,6 +94,7 @@ describe('CountryQuery', function() {
         , {field: 'cca2',          value: 'PL'                       , findFunc: 'findByCca2',         expectCca3: 'POL'}
         , {field: 'cca3',          value: 'GNQ'                      , findFunc: 'findByCca3',         expectCca3: 'GNQ'}
         , {field: 'ccn3',          value: '056'                      , findFunc: 'findByCcn3',         expectCca3: 'BEL'}
+        , {field: 'cioc',          value: 'RWA'                      , findFunc: 'findByCioc',         expectCca3: 'RWA'}
         , {field: 'demonym',       value: 'Qatari'                   , findFunc: 'findByDemonym',      expectCca3: 'QAT'}
         , {field: 'languages',     value: 'Azerbaijani'              , findFunc: 'findByLanguage',     expectCca3: 'AZE'}
         , {field: 'name.common',   value: 'Argentina'                , findFunc: 'findByNameCommon',   expectCca3: 'ARG'}

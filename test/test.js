@@ -16,7 +16,7 @@ describe('CountryQuery', function() {
       var caribCountries = CountryQuery.find('subregion', 'Caribbean')
       var aruba = CountryQuery.find('cca2', 'AW')
       
-      expect(caribCountries).to.be.an('array').and.have.length(28)
+      expect(caribCountries).to.be.an('array').and.have.length(27)
       expect(caribCountries).to.include(aruba)
     })
     
@@ -114,9 +114,8 @@ describe('CountryQuery', function() {
         [ {field: 'borders',    value: 'AFG'            , findFunc: 'findByBorders', expectLength: 7}
         , {field: 'currency',   value: 'GBP'            , findFunc: 'findByCurrency', expectLength: 5}
         , {field: 'landlocked', value: true             , findFunc: 'findByLandlocked', expectLength: 45}
-        , {field: 'region',     value: 'Africa'         , findFunc: 'findByRegion', expectLength: 59}
-        , {field: 'relevance',  value: '0.5'            , findFunc: 'findByRelevance', expectLength: 36}
-        , {field: 'subregion',  value: 'Western Africa' , findFunc: 'findBySubregion', expectLength: 17}
+        , {field: 'region',     value: 'Africa'         , findFunc: 'findByRegion', expectLength: 58}
+        , {field: 'subregion',  value: 'Western Africa' , findFunc: 'findBySubregion', expectLength: 16}
         ]
         
       findArrayTests.forEach(function(test) {

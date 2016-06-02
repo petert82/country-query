@@ -39,11 +39,11 @@ var germany = CountryQuery.find('demonym', 'German');
         "cca2": "AT",
         "ccn3": "040",
         "cca3": "AUT",
+        "cioc": "AUT",
         "currency": ["EUR"],
         "callingCode": ["43"],
         "capital": "Vienna",
         "altSpellings": ["AT", "Osterreich", "Oesterreich"],
-        "relevance": "0",
         "region": "Europe",
         "subregion": "Western Europe",
         "languages": {
@@ -85,7 +85,6 @@ Acceptable values for `by` are:
 - `ccn3`
 - `cca3`
 - `capital`
-- `relevance`
 - `region`
 - `subregion`
 - `demonym`
@@ -185,12 +184,6 @@ Return value is the same as [find](#findby-value).
 ### findByRegion(region)
 
 Find country by the region it is located in.
-
-Return value is the same as [find](#findby-value).
-
-### findByRelevance(relevance)
-
-Find country by 'relevance'.
 
 Return value is the same as [find](#findby-value).
 

@@ -1,6 +1,10 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.1] - 2017-05-21
+### Changed
+- Added `findByCioc()` to the docs in the readme.
+
 ## [1.0.0] - 2017-05-21
 ### Changed
 - `find()` and all `findByX()` functions are now case-insensitive.

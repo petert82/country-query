@@ -1,6 +1,6 @@
 {
   "name": "country-query",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A javascript query API for world-countries data",
   "repository": {
     "type": "git",

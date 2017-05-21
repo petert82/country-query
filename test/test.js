@@ -14,7 +14,7 @@ describe('CountryQuery', function() {
     })
     
     it('should return an array when finding by non-uniquely identifiable string properties', function() {
-      var caribCountries = CountryQuery.find('subregion', 'Caribbean')
+      var caribCountries = CountryQuery.find('subregion', 'caribbean')
       var aruba = CountryQuery.find('cca2', 'AW')
       
       expect(caribCountries).to.be.an('array').and.have.length(27)
@@ -29,12 +29,12 @@ describe('CountryQuery', function() {
     })
     
     it('should return an array when finding by non-uniquely identifiable array properties', function() {
-          var gbpCountries = CountryQuery.find('currency', 'GBP')
-          var uk = CountryQuery.find('cca2', 'GB')
-          
-          expect(gbpCountries).to.be.an('array').and.have.length(5)
-          expect(gbpCountries).to.include(uk)
-        })
+      var gbpCountries = CountryQuery.find('currency', 'gbp')
+      var uk = CountryQuery.find('cca2', 'GB')
+      
+      expect(gbpCountries).to.be.an('array').and.have.length(5)
+      expect(gbpCountries).to.include(uk)
+    })
     
     it('should return an object when finding by uniquely identifiable deep string properties', function() {
       expect(CountryQuery.find('name.common', 'Aruba')).to.have.property('cca3', 'ABW')
@@ -84,10 +84,19 @@ describe('CountryQuery', function() {
     })
   })
 
+  it('should be case insensitive', function() {
+    expect(CountryQuery.find('cca2', 'aw')).to.have.property('cca3', 'ABW')
+    expect(CountryQuery.find('capital', 'oranjestad')).to.have.property('cca3', 'ABW')
+    expect(CountryQuery.find('altSpellings', 'aw')).to.have.property('cca3', 'ABW')
+    expect(CountryQuery.find('name.common', 'aruba')).to.have.property('cca3', 'ABW')
+    expect(CountryQuery.find('languages', 'galician')).to.have.property('cca3', 'ESP')
+  })
+
   describe('#findByX()', function() {
     it('should behave the same as the equivalent plain find', function() {
       var findSingleTests = 
         [ {field: 'altSpellings',  value: 'Oesterreich'              , findFunc: 'findByAltSpelling',  expectCca3: 'AUT'}
+        , {field: 'altSpellings',  value: 'oesterreich'              , findFunc: 'findByAltSpelling',  expectCca3: 'AUT'}
         , {field: 'area',          value: 6                          , findFunc: 'findByArea',         expectCca3: 'GIB'}
         , {field: 'callingCode',   value: '355'                      , findFunc: 'findByCallingCode',  expectCca3: 'ALB'}
         , {field: 'capital',       value: 'Guatemala City'           , findFunc: 'findByCapital',      expectCca3: 'GTM'}
@@ -100,6 +109,7 @@ describe('CountryQuery', function() {
         , {field: 'name.common',   value: 'Argentina'                , findFunc: 'findByNameCommon',   expectCca3: 'ARG'}
         , {field: 'name.official', value: 'Argentine Republic'       , findFunc: 'findByNameOfficial', expectCca3: 'ARG'}
         , {field: 'name.native',   value: "Rep\u00fablica Argentina" , findFunc: 'findByNameNative',   expectCca3: 'ARG'}
+        , {field: 'name.native',   value: "rep\u00fablica argentina" , findFunc: 'findByNameNative',   expectCca3: 'ARG'}
         , {field: 'tld',           value: '.ao'                      , findFunc: 'findByTld',          expectCca3: 'AGO'}
         , {field: 'translations',  value: 'Prinsdom Andorra'         , findFunc: 'findByTranslation',  expectCca3: 'AND'}
         ]
@@ -114,6 +124,7 @@ describe('CountryQuery', function() {
       
       var findArrayTests = 
         [ {field: 'borders',    value: 'AFG'            , findFunc: 'findByBorders', expectLength: 7}
+        , {field: 'borders',    value: 'afg'            , findFunc: 'findByBorders', expectLength: 7}
         , {field: 'currency',   value: 'GBP'            , findFunc: 'findByCurrency', expectLength: 5}
         , {field: 'landlocked', value: true             , findFunc: 'findByLandlocked', expectLength: 45}
         , {field: 'region',     value: 'Africa'         , findFunc: 'findByRegion', expectLength: 58}

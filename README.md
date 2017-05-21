@@ -16,6 +16,8 @@ Finds data for one or more countries matching some search value.
 
 Takes a property name to search by and a value to search for. If the value matches a single country, an object containing that country's data will be returned. If the value matches more than one country, an array of country objects will be returned. If no countries match, or an invalid property name is used, returns `null`.
 
+This function is not case-sensitive, i.e the input values `German`, `german` and `gErMaN` would all match the language `German`.
+
 ```js
 var CountryQuery = require('country-query');
 

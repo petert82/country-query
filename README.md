@@ -87,6 +87,7 @@ Acceptable values for `by` are:
 - `ccn3`
 - `cca3`
 - `capital`
+- `cioc`
 - `region`
 - `subregion`
 - `demonym`
@@ -138,6 +139,12 @@ Return value is the same as [find](#findby-value).
 ### findByCcn3(ccn3)
 
 Find country by numeric country code.
+
+Return value is the same as [find](#findby-value).
+
+### findByCioc(cioc)
+
+Find country by 3-letter International Olympic Commitee country code.
 
 Return value is the same as [find](#findby-value).
 

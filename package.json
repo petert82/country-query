@@ -15,8 +15,8 @@
   },
   "dependencies": {
     "lodash": "^4.17.15",
-    "lodash-deep": "^1.6.0",
-    "world-countries": "^1.7.8"
+    "lodash-deep": "^2.0.0",
+    "world-countries": "^2.1.0"
   },
   "devDependencies": {
     "chai": "^2.1.2"

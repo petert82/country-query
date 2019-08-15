@@ -17,7 +17,7 @@ describe('CountryQuery', function() {
       var caribCountries = CountryQuery.find('subregion', 'caribbean')
       var aruba = CountryQuery.find('cca2', 'AW')
       
-      expect(caribCountries).to.be.an('array').and.have.length(27)
+      expect(caribCountries).to.be.an('array').and.have.length(28)
       expect(caribCountries).to.include(aruba)
     })
     
@@ -32,7 +32,7 @@ describe('CountryQuery', function() {
       var gbpCountries = CountryQuery.find('currency', 'gbp')
       var uk = CountryQuery.find('cca2', 'GB')
       
-      expect(gbpCountries).to.be.an('array').and.have.length(5)
+      expect(gbpCountries).to.be.an('array').and.have.length(6)
       expect(gbpCountries).to.include(uk)
     })
     
@@ -45,17 +45,17 @@ describe('CountryQuery', function() {
     })
     
     it('should return an object when finding by uniquely identifiable properties that contain maps', function() {
-      expect(CountryQuery.find('languages', 'Galician')).to.have.property('cca3', 'ESP')
+      expect(CountryQuery.find('languages', 'Tuvaluan')).to.have.property('cca3', 'TUV')
       expect(CountryQuery.find('languages', 'Czech')).to.have.property('cca3', 'CZE')
     })
     
     it('should return an array when finding by non-uniquely identifiable properties that contain maps', function() {
-      var austBavCountries = CountryQuery.find('languages', 'Austro-Bavarian German'),
-          austria = CountryQuery.find('cca2', 'AT'),
+      var italian = CountryQuery.find('languages', 'Italian'),
+          switz = CountryQuery.find('cca2', 'CH'),
           italy = CountryQuery.find('cca2', 'IT')
       
-      expect(austBavCountries).to.be.an('array').and.have.length(2)
-      expect(austBavCountries).to.include(austria).and.to.include(italy)
+      expect(italian).to.be.an('array').and.have.length(4)
+      expect(italian).to.include(switz).and.to.include(italy)
     })
     
     it('should return null for searches that return nothing', function() {
@@ -89,7 +89,7 @@ describe('CountryQuery', function() {
     expect(CountryQuery.find('capital', 'oranjestad')).to.have.property('cca3', 'ABW')
     expect(CountryQuery.find('altSpellings', 'aw')).to.have.property('cca3', 'ABW')
     expect(CountryQuery.find('name.common', 'aruba')).to.have.property('cca3', 'ABW')
-    expect(CountryQuery.find('languages', 'galician')).to.have.property('cca3', 'ESP')
+    expect(CountryQuery.find('languages', 'tuvaluan')).to.have.property('cca3', 'TUV')
   })
 
   describe('#findByX()', function() {
@@ -123,12 +123,12 @@ describe('CountryQuery', function() {
       })
       
       var findArrayTests = 
-        [ {field: 'borders',    value: 'AFG'            , findFunc: 'findByBorders', expectLength: 7}
-        , {field: 'borders',    value: 'afg'            , findFunc: 'findByBorders', expectLength: 7}
-        , {field: 'currency',   value: 'GBP'            , findFunc: 'findByCurrency', expectLength: 5}
+        [ {field: 'borders',    value: 'AFG'            , findFunc: 'findByBorders', expectLength: 6}
+        , {field: 'borders',    value: 'afg'            , findFunc: 'findByBorders', expectLength: 6}
+        , {field: 'currency',   value: 'GBP'            , findFunc: 'findByCurrency', expectLength: 6}
         , {field: 'landlocked', value: true             , findFunc: 'findByLandlocked', expectLength: 45}
-        , {field: 'region',     value: 'Africa'         , findFunc: 'findByRegion', expectLength: 58}
-        , {field: 'subregion',  value: 'Western Africa' , findFunc: 'findBySubregion', expectLength: 16}
+        , {field: 'region',     value: 'Africa'         , findFunc: 'findByRegion', expectLength: 59}
+        , {field: 'subregion',  value: 'Western Africa' , findFunc: 'findBySubregion', expectLength: 17}
         ]
         
       findArrayTests.forEach(function(test) {

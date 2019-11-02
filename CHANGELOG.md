@@ -1,6 +1,10 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.1] - 2019-11-02
+### Fixed
+- Correct example country object in readme.
+
 ## [1.1.0] - 2019-11-02
 ### Changed
 - Updated to version 2.1.0 of world-countries data (Thanks [fiid](https://github.com/fiid)!).

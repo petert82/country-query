@@ -32,8 +32,8 @@ var germany = CountryQuery.find('demonym', 'German');
             "official": "Republic of Austria",
             "native": {
                 "bar": {
-                    "official": "Republik \u00d6sterreich",
-                    "common": "\u00d6sterreich"
+                    "official": "Republik Österreich",
+                    "common": "Österreich"
                 }
             }
         },
@@ -42,9 +42,11 @@ var germany = CountryQuery.find('demonym', 'German');
         "ccn3": "040",
         "cca3": "AUT",
         "cioc": "AUT",
+        "independent": true,
+        "status": "officially-assigned",
         "currency": ["EUR"],
         "callingCode": ["43"],
-        "capital": "Vienna",
+        "capital": ["Vienna"],
         "altSpellings": ["AT", "Osterreich", "Oesterreich"],
         "region": "Europe",
         "subregion": "Western Europe",
@@ -52,15 +54,26 @@ var germany = CountryQuery.find('demonym', 'German');
             "bar": "Austro-Bavarian German"
         },
         "translations": {
-            "cym": {"official": "Republic of Austria", "common": "Awstria"},
-            "deu": {"official": "Republik \u00d6sterreich", "common": "\u00d6sterreich"},
+            "ces": {
+                "official": "Rakouská republika",
+                "common": "Rakousko"
+            },
+            "cym": {
+                "official": "Gweriniaeth Awstria",
+                "common": "Awstria"
+            },
+            "deu": {
+                "official": "Republik Österreich",
+                "common": "Österreich"
+            },
             // ...snip...
         },
         "latlng": [47.33333333, 13.33333333],
         "demonym": "Austrian",
         "landlocked": true,
         "borders": ["CZE", "DEU", "HUN", "ITA", "LIE", "SVK", "SVN", "CHE"],
-        "area": 83871
+        "area": 83871,
+        "flag": "🇦🇹"
     }
 
  */

@@ -1,6 +1,10 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.2] - 2019-11-02
+### Changed
+- Updated to version 4.17.15 of lodash (Thanks [fiid](https://github.com/fiid)!).
+
 ## [1.0.1] - 2017-05-21
 ### Changed
 - Added `findByCioc()` to the docs in the readme.

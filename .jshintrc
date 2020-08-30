@@ -1,9 +1,0 @@
-{
-  "node": true,
-  "asi": true,
-  "eqeqeq": true,
-  "eqnull": true,
-  "esnext": true,
-  "laxcomma": true,
-  "unused": true
-}

@@ -1,6 +1,10 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.2] - 2020-08-30
+### Changed
+- Upgraded to latest version of lodash.
+
 ## [1.1.1] - 2019-11-02
 ### Fixed
 - Correct example country object in readme.

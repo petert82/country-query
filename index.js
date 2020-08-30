@@ -1,1 +1,1 @@
-module.exports = require('./lib/country-query.js');
+module.exports = require('./lib/country-query.js')

@@ -21,10 +21,10 @@ Takes a property name to search by and a value to search for. If the value match
 This function is not case-sensitive, i.e the input values `German`, `german` and `gErMaN` would all match the language `German`.
 
 ```js
-var CountryQuery = require('country-query');
+var CountryQuery = require('country-query')
 
-var austria = CountryQuery.find('cca2', 'AT');
-var germany = CountryQuery.find('demonym', 'German');
+var austria = CountryQuery.find('cca2', 'AT')
+var germany = CountryQuery.find('demonym', 'German')
 
 // austria and germany will both be objects with this structure:
 /*
@@ -80,7 +80,7 @@ var germany = CountryQuery.find('demonym', 'German');
 
  */
 
-var euroCountries = CountryQuery.find('currency', 'EUR');
+var euroCountries = CountryQuery.find('currency', 'EUR')
 
 // euroCountries will be an array of country objects
 ```
@@ -241,4 +241,4 @@ Permission to use, copy, modify, and/or distribute this software for any purpose
 
 THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-[world-countries]:https://github.com/mledoze/countries
+[world-countries]: https://github.com/mledoze/countries

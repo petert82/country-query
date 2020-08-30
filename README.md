@@ -1,5 +1,7 @@
 # country-query
 
+![CI](https://github.com/petert82/country-query/workflows/CI/badge.svg)
+
 A javascript query API for [world-countries][world-countries] data.
 
 ## Table of contents

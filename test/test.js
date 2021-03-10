@@ -12,7 +12,7 @@ describe('CountryQuery', function () {
         'cca3',
         'ABW'
       )
-      expect(CountryQuery.find('demonym', 'Aruban')).to.have.property(
+      expect(CountryQuery.find('demonyms', 'Aruban')).to.have.property(
         'cca3',
         'ABW'
       )
@@ -33,7 +33,7 @@ describe('CountryQuery', function () {
         'cca3',
         'ABW'
       )
-      expect(CountryQuery.find('currency', 'AWG')).to.have.property(
+      expect(CountryQuery.find('currencies', 'AWG')).to.have.property(
         'cca3',
         'ABW'
       )
@@ -45,7 +45,7 @@ describe('CountryQuery', function () {
     })
 
     it('should return an array when finding by non-uniquely identifiable array properties', function () {
-      var gbpCountries = CountryQuery.find('currency', 'gbp')
+      var gbpCountries = CountryQuery.find('currencies', 'gbp')
       var uk = CountryQuery.find('cca2', 'GB')
 
       expect(gbpCountries).to.be.an('array').and.have.length(6)
@@ -101,7 +101,7 @@ describe('CountryQuery', function () {
         { field: 'ccn3', value: '000' },
         { field: 'cca3', value: 'XXX' },
         { field: 'capital', value: 'XXXXX' },
-        { field: 'demonym', value: 'XXXXXXX' },
+        { field: 'demonyms', value: 'XXXXXXX' },
       ]
       nullTests.forEach(function (test) {
         expect(CountryQuery.find(test.field, test.value)).to.be.null
@@ -158,9 +158,9 @@ describe('CountryQuery', function () {
         },
         { field: 'area', value: 6, findFunc: 'findByArea', expectCca3: 'GIB' },
         {
-          field: 'callingCode',
+          field: 'idd',
           value: '355',
-          findFunc: 'findByCallingCode',
+          findFunc: 'findByIdd',
           expectCca3: 'ALB',
         },
         {
@@ -194,7 +194,7 @@ describe('CountryQuery', function () {
           expectCca3: 'RWA',
         },
         {
-          field: 'demonym',
+          field: 'demonyms',
           value: 'Qatari',
           findFunc: 'findByDemonym',
           expectCca3: 'QAT',
@@ -241,6 +241,12 @@ describe('CountryQuery', function () {
           findFunc: 'findByTranslation',
           expectCca3: 'AND',
         },
+        {
+          field: 'currencies',
+          value: 'VES',
+          findFunc: 'findByCurrency',
+          expectCca3: 'VEN',
+        },
       ]
 
       findSingleTests.forEach(function (test) {
@@ -268,7 +274,7 @@ describe('CountryQuery', function () {
           expectLength: 6,
         },
         {
-          field: 'currency',
+          field: 'currencies',
           value: 'GBP',
           findFunc: 'findByCurrency',
           expectLength: 6,

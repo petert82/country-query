@@ -1,6 +1,19 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.0] - 2021-03-11
+### Added
+- Added `findByIdd()` function (this replaces `findByCallingCode()`).
+- Added 'currencies', 'idd' and 'demonyms' as possible values of the `by` param to `find()`.
+
+### Changed
+- Updated to version 4.0.0 of world-countries data.
+- Structure of the country objects returned by `find()` has been updated due to the above.
+
+### Removed
+- Removed `findByCallingCode()` as the `callingCode` field no longer exists in the world-countries data.
+- Removed 'currency', 'callingCode' and 'demonym' as possible values of the `by` param to `find()`.
+
 ## [1.1.2] - 2020-08-30
 ### Changed
 - Upgraded to latest version of lodash.

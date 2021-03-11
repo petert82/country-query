@@ -46,8 +46,13 @@ var germany = CountryQuery.find('demonym', 'German')
         "cioc": "AUT",
         "independent": true,
         "status": "officially-assigned",
-        "currency": ["EUR"],
-        "callingCode": ["43"],
+        "currencies": {
+            "EUR": { "name": "Euro", "symbol": "\u20ac" }
+        },
+        "idd": {
+            "root": "+4",
+            "suffixes": ["3"]
+        },
         "capital": ["Vienna"],
         "altSpellings": ["AT", "Osterreich", "Oesterreich"],
         "region": "Europe",
@@ -71,16 +76,24 @@ var germany = CountryQuery.find('demonym', 'German')
             // ...snip...
         },
         "latlng": [47.33333333, 13.33333333],
-        "demonym": "Austrian",
         "landlocked": true,
         "borders": ["CZE", "DEU", "HUN", "ITA", "LIE", "SVK", "SVN", "CHE"],
         "area": 83871,
-        "flag": "🇦🇹"
+        "flag": "\ud83c\udde6\ud83c\uddf9",
+        "demonyms": {
+            "eng": {
+                "f": "Austrian",
+                "m": "Austrian"
+            },
+            "fra": {
+                "f": "Autrichienne",
+                "m": "Autrichien"
+            }
+        }
     }
-
  */
 
-var euroCountries = CountryQuery.find('currency', 'EUR')
+var euroCountries = CountryQuery.find('currencies', 'EUR')
 
 // euroCountries will be an array of country objects
 ```
@@ -88,8 +101,8 @@ var euroCountries = CountryQuery.find('currency', 'EUR')
 Acceptable values for `by` are:
 
 - `tld`
-- `currency`
-- `callingCode`
+- `currencies`
+- `idd`
 - `altSpellings`
 - `latlng`
 - `borders`
@@ -105,7 +118,7 @@ Acceptable values for `by` are:
 - `cioc`
 - `region`
 - `subregion`
-- `demonym`
+- `demonyms`
 - `landlocked`
 - `area`
 
@@ -127,7 +140,7 @@ Find country by countries that it borders
 
 Return value is the same as [find](#findby-value).
 
-### findByCallingCode(callingCode)
+### findByIdd(idd)
 
 Find country by telephone calling code.
 
@@ -171,7 +184,7 @@ Return value is the same as [find](#findby-value).
 
 ### findByDemonym(demonym)
 
-Find country by the demonym used for its citizens.
+Find country by one of the demonyms used for its citizens.
 
 Return value is the same as [find](#findby-value).
 

@@ -1,6 +1,10 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.1] - 2021-05-01
+### Changed
+- Updated dependencies, no API changes.
+
 ## [2.0.0] - 2021-03-11
 ### Added
 - Added `findByIdd()` function (this replaces `findByCallingCode()`).

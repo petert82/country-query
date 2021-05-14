@@ -1,6 +1,10 @@
 # Change Log
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [2.0.2] - 2021-05-14
+### Changed
+- Updated lodash, no API changes.
+
 ## [2.0.1] - 2021-05-01
 ### Changed
 - Updated dependencies, no API changes.
